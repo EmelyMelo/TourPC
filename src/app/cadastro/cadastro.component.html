@@ -1,0 +1,55 @@
+<p> Nova Conta</p>
+<form #meuFormOutro="ngForm">
+  <table id="login" class="tabela">
+    <tr>
+      <td>
+      </td>
+      <td>
+        <!-- CAMPO DE NOME -->
+        <input #campoNome="ngModel" type="text" pInputText class="quadroDosNames form-control" placeholder="Nome" [(ngModel)]="usuario.nome"
+          name="nome" required>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+        <!-- CAMPO DE USUÁRIO -->
+        <input #campoUsername="ngModel" type="text" pInputText class="quadroSenhaEUsername form-control" [(ngModel)]="usuario.username" name="OutroName"
+          placeholder="Username" required>
+        <div *ngIf="!campoUsername.valid && (campoUsername.dirty || campoUsername.touched)" class="alert alert-danger">Por favor, digite seu nome de usuário</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+        <!-- CAMPO DE SENHA -->
+        <input #campoSenha="ngModel" type="password" pInputText class="quadroSenhaEUsername form-control" [(ngModel)]="usuario.senha" name="senhaa"
+          placeholder="Senha" required>
+        <div *ngIf="!campoSenha.valid && (campoSenha.dirty || campoSenha.touched)" class="alert alert-danger">Por favor, digite sua senha</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+        <p>Você é:</p>
+        <!-- SELECIONAR O TIPO DE USUARIO -->
+        <p-radioButton #tipoDeUsuario="ngModel" name="groupname" value="aluno" label="Aluno" [(ngModel)]="usuario.tipoDeUsuario"
+          required></p-radioButton>
+        <p-radioButton #tipoDeUsuario="ngModel" name="groupname" value="professor" label="Professor" [(ngModel)]="usuario.tipoDeUsuario"
+          required></p-radioButton>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+        <!-- COLOCAR UM IF, PARA SEPARAR AS TELAS DO ALUNO E DO PROFESSSOR-->
+        <button pButton type="button" [disabled]="!meuFormOutro.valid" (click)="salvar();" class="ui-button-warning" label="Cadastre-se"></button>
+
+      </td>
+    </tr>
+  </table>
+</form>

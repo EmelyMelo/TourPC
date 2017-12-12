@@ -1,0 +1,30 @@
+<p-dataTable [value]="questoes" (onRowDblclick)="visualizarDetalhesQuestao($event)" [paginator]="true" rows="15" [responsive]="true">
+  <p-column field="assunto" header="Assuntos" [sortable]="true">
+  </p-column>  
+  <p-column field="enunciado" header="Questões" [sortable]="true"></p-column>
+  <p-footer><div class="ui-helper-clearfix" style="width:100%">
+    <button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></p-footer>
+  </p-dataTable>
+  
+  <p-dialog header="Questão" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+  <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="questao">
+      <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="enunciado">Enunciado</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="enunciado" [(ngModel)]="questao.enunciado" /></div>
+      </div>
+      <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="assunto">Assunto</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="assunto" [(ngModel)]="questao.assunto" /></div>
+      </div>
+      <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="respostaCerta">Resposta Certa</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="respostaCerta" [(ngModel)]="questao.respostaCerta" /></div>
+      </div>
+  </div>
+  <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+          <button type="button" pButton icon="fa-close" (click)="deletar()" label="Deletar"></button>
+          <button type="button" pButton icon="fa-check" (click)="salvar()" label="Salvar"></button>
+      </div>
+  </p-footer>
+</p-dialog>

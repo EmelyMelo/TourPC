@@ -1,0 +1,22 @@
+<h3>Inserir Questões</h3>
+<div class="ui-g-6">
+<p>Selecione o assunto:</p>
+<p-listbox [options]="componentes" [(ngModel)]="questao.assunto"></p-listbox>
+</div>
+<div class="ui-g-6">
+<p>Enunciado:</p>
+<textarea [rows]="5" [cols]="30" [(ngModel)]="questao.enunciado" pInputTextarea autoResize="autoResize"></textarea>
+<p>Resposta correta:</p>
+<input type="text" pInputText [(ngModel)]="questao.respostaCerta"/>
+<p>Se a questão possui alternativas indique-as abaixo:</p>
+<input type="text" pInputText [(ngModel)]="alternativa1"/><br><br>
+<input type="text" pInputText [(ngModel)]="alternativa2"/><br><br>
+<input type="text" pInputText [(ngModel)]="alternativa3"/><br><br>
+<input type="text" pInputText [(ngModel)]="alternativa4"/> <br>
+<br>
+<button pButton type="button" (click)="listar()" class="ui-button-info ui-growl-container" label="Listar Questões"></button>
+<button pButton type="button" (click)="salvar()" class="ui-button-success ui-growl-container" label="Salvar"></button>
+<!-- COLOCAR CONDIÇÃO DE TODOS OS IMPUTS ESTAREM COM ALGUMA COISA-->
+</div>  
+
+ 

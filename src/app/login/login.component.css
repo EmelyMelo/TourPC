@@ -1,0 +1,60 @@
+.tabela{
+    max-width: 1000px;
+    position: absolute;
+    top: 15%;
+    left: 40%; 
+}
+th{
+    font-family: "Verdana";
+    font-weight: 200px;	
+}
+p, p-radioButton{
+    font-family: "Verdana";
+    font-weight: 100px;
+}
+.divDeEntrada{
+    height: 20px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 1px ;    
+
+}
+.quadroDoLogin{
+    height: 20px;
+    width: 250px;
+    padding: 15px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.quadroDosNames{
+    height: 20px;
+    width: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+.quadroSenhaEUsername{
+    height: 20px;
+    width: 400px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+.botaoEntrada{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    margin: 4px 2px;
+}
+.botaoCadastro{
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 14px 30px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}

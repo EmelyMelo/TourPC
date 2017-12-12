@@ -1,0 +1,12 @@
+<p-dataTable [value]="questoes">
+    <p-column field="assunto" header="Assunto"></p-column>
+    <p-column field="enunciado" header="Enunciado"></p-column>
+    <p-column styleClass="col-button">
+        <ng-template pTemplate="header">
+            <button type="button" pButton icon="fa-refresh"></button>
+        </ng-template>
+        <ng-template let-car="rowData" pTemplate="body">
+            <button type="button" pButton (click)="selectQuestao(questao)" icon="fa-search"></button>
+        </ng-template>
+    </p-column>
+</p-dataTable>

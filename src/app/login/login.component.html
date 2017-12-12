@@ -1,0 +1,33 @@
+<div class="ui-g">
+    <form #meuForm="ngForm">
+    <p-growl [(value)]="msgs"></p-growl>   
+    <div class="divDeEntrada ui-g-1">
+    <table id="login" class="tabela">
+    <router-outlet></router-outlet> <!-- ROTAS -->
+      <tr>
+      <th> Username </th>
+      <td> 
+      <input #campoUsuario="ngModel" [(ngModel)]="usuario.username" type="text" class="quadroDoLogin form-control" pInputText  name="username" placeholder="Ex.: joaoemaria" required> 
+        <div *ngIf="!campoUsuario.valid && (campoUsuario.dirty || campoUsuario.touched)"  class="alert alert-danger">
+        Por favor, digite seu nome de usuário</div>
+      </td>
+      <th>Senha</th>
+      <td>
+      <input #senha [(ngModel)]="usuario.senha" pInputText name="senha" type="password" class="quadroDoLogin form-control" required>
+      </td>
+      <th><!-- COLOCAR UM IF, SE O USUÁRIO E A SENHA ESTIVEREM CORRETOS ENTRA-->
+      <button pButton type="button" [disabled]="!meuForm.valid" (click)="entrar()" class="ui-button-success ui-growl-container" label="Entre"></button>
+      </th>
+      </tr>
+      <tr>
+      <td> 
+      <button pButton type="button" routerLink="/cadastro" class="ui-button-info ui-growl-container" label="Nova Conta"></button>  
+      </td> 
+      </tr>
+      </table>
+      </div>
+      </form>
+    </div>
+    
+      
+      
