@@ -1,6 +1,6 @@
 export interface Questao{
-    id: number;
+    id?: string;
     assunto: String;
     enunciado: String;
     respostaCerta: String;
-}
+}   

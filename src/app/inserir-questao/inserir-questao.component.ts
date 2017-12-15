@@ -29,6 +29,7 @@ export class InserirQuestaoComponent implements OnInit {
           this.componentes.push({label:'Placa mãe', value:'placa-mae'});
           this.componentes.push({label:'Portas', value:'portas'});
           this.componentes.push({label:'Processador', value:'processador'});
+          this.questao = {id: null, assunto: "", enunciado: "", respostaCerta:""};
       }
   ngOnInit() {
   }

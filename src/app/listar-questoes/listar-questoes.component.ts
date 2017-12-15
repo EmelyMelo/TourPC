@@ -9,16 +9,19 @@ import { QuestaoService } from 'app/questao.service';
   styleUrls: ['./listar-questoes.component.css']
 })
 export class ListarQuestoesComponent implements OnInit {
-  questoes: Questao[];
+  questoes: Questao[] = [];
   displayDialog: boolean;
-  questao: Questao;
+  questao: Questao = {enunciado: "", assunto:"", respostaCerta:""};
   questaoSelecionada: Questao;  
   novaQuestao: boolean;
 
   constructor(private questaoService: QuestaoService) { }
 
   ngOnInit() { 
-    //this.questoes = this.questaoService.listar();
+     
+      this.questaoService.listar().subscribe(questoes => {
+        this.questoes = questoes;
+      });    
   }
   showDialogToAdd() {
     this.novaQuestao = true;

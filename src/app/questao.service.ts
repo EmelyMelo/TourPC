@@ -7,26 +7,19 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class QuestaoService {
   private questaoCollection: AngularFirestoreCollection<Questao>; 
-  questoes: Questao[] = new Array<Questao>();
+  questoes: Questao[] = new Array<Questao>();bv
   questao: Questao;
 
   constructor(private route: Router, private servicoFirestore: AngularFirestore) {
     this.questaoCollection = this.servicoFirestore.collection<Questao>("Funcionar io");       
-    let q1; 
-    q1.assunto = "fonte";
-    q1.enunciado = "bla";
-    q1.id = 1;
-    let q2; 
-    q2.assunto = "hd";
-    q2.enunciado = "ble";
-    q2.id = 2;
+    let q1:Questao = {assunto: "fonte", enunciado:"cnco é top", respostaCerta: "1"};
+    let q2:Questao = {assunto:"hd", enunciado:"é top sim", respostaCerta: "1"};
     this.questaoCollection.add(q1);
     this.questaoCollection.add(q2);
   }
 
   adicionar(questao:Questao){
-    this.questaoCollection.add(questao);
-    this.questao.id ++;    
+    this.questaoCollection.add(questao);    
   }
 
   listar(): Observable<any[]> {
